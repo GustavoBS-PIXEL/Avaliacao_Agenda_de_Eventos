@@ -87,6 +87,14 @@ src/app/
 
 ## Imagens da Aplicação
 
+<img width="1917" height="871" alt="image" src="https://github.com/user-attachments/assets/196ff20f-2cdc-4821-a4d2-a8e44cc0e598" />
+
+<img width="1915" height="867" alt="image" src="https://github.com/user-attachments/assets/ef2a2ec8-7056-4f17-8117-00ecc6e7e76d" />
+
+<img width="1917" height="871" alt="image" src="https://github.com/user-attachments/assets/ed590341-f52a-4704-8404-bff206713063" />
+
 ## Vídeo de Apresentação
+
+Link: https://youtu.be/brYHl_Dde-U
 
 
