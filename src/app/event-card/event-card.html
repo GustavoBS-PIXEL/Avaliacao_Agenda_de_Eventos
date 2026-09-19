@@ -1,0 +1,51 @@
+<article class="event-card" [class.favoritado]="evento.favorito">
+  <img [src]="evento.imagem" [alt]="evento.nome" class="event-image" />
+  <div class="event-content">
+    <div class="event-meta">
+      <span class="category-badge">{{ evento.categoria }}</span>
+      <span class="date-badge">
+        <span aria-hidden="true">&#128197;</span>
+        {{ formatarData() }}
+      </span>
+    </div>
+
+    <h3 class="event-title">{{ evento.nome }}</h3>
+    <p class="event-local">
+      <span aria-hidden="true">&#128205;</span>
+      {{ evento.local }}
+    </p>
+
+    <div class="vagas-info">
+      <span class="vagas-label">Vagas:</span>
+      <span class="vagas-valor">{{ vagasRestantes }} restantes</span>
+      <span *ngIf="vagasRestantes === 0" class="vagas-esgotadas">Esgotadas</span>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="porcentagemPreenchida"></div>
+    </div>
+
+    @if (evento.inscricoesAbertas) {
+      <div class="event-actions">
+        <button
+          class="btn btn-primary"
+          [disabled]="vagasRestantes === 0 || !evento.inscricoesAbertas"
+          (click)="inscrever(evento)"
+        >
+          Inscrever-se
+        </button>
+        <button
+          class="btn btn-secondary"
+          [class.active]="evento.favorito"
+          (click)="favoritar(evento)"
+        >
+          {{ evento.favorito ? '&#9733; Favoritado' : '&#9734; Favoritar' }}
+        </button>
+      </div>
+    } @else {
+      <p class="inscricao-fechada">Inscrições encerradas</p>
+    }
+
+    <button class="btn-detalhes" (click)="verDetalhes(evento)">Ver detalhes &#8594;</button>
+  </div>
+</article>
