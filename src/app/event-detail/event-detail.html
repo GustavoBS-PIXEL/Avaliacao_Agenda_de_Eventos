@@ -1,0 +1,23 @@
+@if (visivel) {
+  <section class="detail-overlay" (click)="close()">
+    <article class="detail-panel" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="close()" aria-label="Fechar">&times;</button>
+      <img [src]="evento!.imagem" [alt]="evento!.nome" class="detail-image" />
+      <div class="detail-body">
+        <span class="detail-category">{{ evento!.categoria }}</span>
+        <h2 class="detail-title">{{ evento!.nome }}</h2>
+
+        <div class="detail-info">
+          <p><strong>Data:</strong> {{ formatarData() }}</p>
+          <p><strong>Local:</strong> {{ evento!.local }}</p>
+          <p><strong>Vagas:</strong> {{ vagasRestantes }} restantes de {{ evento!.vagasTotais }}</p>
+        </div>
+
+        <div class="detail-desc">
+          <h4>Sobre o evento</h4>
+          <p>{{ evento!.detalhes }}</p>
+        </div>
+      </div>
+    </article>
+  </section>
+}
